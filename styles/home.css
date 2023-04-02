@@ -68,9 +68,10 @@
     transition: .3s linear;
     outline: none;
     text-align: center;
+    background-color: var(--bg-color);
 }
 
-.page{
+.page, .new{
     --c:linear-gradient(var(--text-color) 0 0);
     background: var(--c), var(--c);
     background-size: 1em .1em;
@@ -79,7 +80,7 @@
     transition: .3s linear, background-size .3s .2s linear;
     cursor: pointer;
 }
-.page:hover {
+.page:hover,.new:hover{
     background-size: 50% .1em;
     background-position: 10% 100%, 90% 100%;
 }
@@ -89,6 +90,7 @@
     top: 0;
     right: 0;
     padding: 20px 50px;
+    width: min-content;
 }
 
 .login a{
@@ -101,11 +103,15 @@
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-items: center;
-    width: 90px;
 }
 
 .login a ion-icon{
     font-size: 30px;
+    margin-left: -50px;
+}
+
+.login a span{
+    white-space: nowrap;
 }
 
 .login a:hover{

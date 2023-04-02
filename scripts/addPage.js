@@ -6,11 +6,19 @@ function addPage() {
         page.innerHTML += `
         <form method="post">
         <div class="new" id="new">
-            <input type="text" name="pageName" placeholder="Page Name" required>
+            <input id="newInput" type="text" name="pageName" placeholder="New Page" required>
         </div>
         </form>
         `;
     }
+    const newPage = document.getElementById('newInput');
+    newPage.focus();
+    newPage.addEventListener('blur', function () {
+        if (newPage.value == '') {
+            page.removeChild(page.lastChild);
+            page.removeChild(page.lastChild);
+        }
+    });
 }
 
 function successAlert() {
