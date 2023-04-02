@@ -7,13 +7,14 @@ function login()
         $email = $_POST['email'];
         $password = $_POST['password'];
         $db = dbConnect();
-        $req = $db->prepare('SELECT * FROM users WHERE email = :email');
+        $req = $db->prepare('SELECT id,email,firstName,lastName,password FROM users WHERE email = :email');
         $req->execute(array(
             'email' => $email
         ));
         $result = $req->fetch();
         if (password_verify($password, $result['password'])) {
             session_start();
+            $_SESSION['id'] = $result['id'];
             $_SESSION['email'] = $email;
             $_SESSION['Fname'] = $result['firstName'];
             $_SESSION['Lname'] = $result['lastName'];

@@ -17,7 +17,14 @@ function createUser(){
                 'Lname' => $Lname,
                 'password' => $password
             ));
+            $req = $db->prepare('SELECT id FROM users WHERE email = :email');
+            $req->execute(array(
+                'email' => $email
+            ));
+            $result = $req->fetch();
+
             session_start();
+            $_SESSION['id'] = $result['id'];
             $_SESSION['email'] = $email;
             $_SESSION['Fname'] = $Fname;
             $_SESSION['Lname'] = $Lname;
