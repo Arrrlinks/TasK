@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito+Sans&display=swap');
+
+:root{
+    --bg-color: #FBFBFF;
+    --text-color: #000000;
+    --gray:EEEEEE;
+    --light-gray: #E4E4E4;
+    --title-primary: #040F16;
+    --title-secondary: #0B4F6C;
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    font-family: 'Inter', sans-serif;
+}
+
+ion-icon{
+    pointer-events: none;
+}

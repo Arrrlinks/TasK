@@ -1,0 +1,194 @@
+h1{
+    font-size: 2.5em;
+    font-weight: 400;
+    text-align: center;
+    color: var(--text-color);
+}
+
+#login{
+    width: 300px;
+    margin: 15vh auto;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+#login form{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#input,#confirm{
+    margin-top: 40px;
+}
+
+#confirm{
+    margin-bottom: 80px;
+}
+
+/* inputs */
+
+.wave-group {
+    position: relative;
+}
+
+.wave-group .input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid var(--gray);
+    background: transparent;
+}
+
+.wave-group .input:focus {
+    outline: none;
+}
+
+.wave-group .label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    display: flex;
+}
+
+.wave-group .label-char {
+    transition: 0.2s ease all;
+    transition-delay: calc(var(--index) * .03s);
+}
+
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:valid ~ label .label-char {
+    transform: translateY(-20px);
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.wave-group .bar {
+    position: relative;
+    display: block;
+    width: 100%;
+    top:1px;
+}
+
+.wave-group .bar:before,.wave-group .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: var(--text-color);
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.wave-group .bar:before {
+    left: 50%;
+}
+
+.wave-group .bar:after {
+    right: 50%;
+}
+
+.wave-group .input:focus ~ .bar:before,
+.wave-group .input:focus ~ .bar:after {
+    width: 50%;
+}
+
+
+/*Login button*/
+
+button.login {
+    padding: 0;
+    border: none;
+    background: none;
+    position: relative;
+    display: flex;
+    font-weight: 200;
+    font-size: 20px;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: -30px;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+
+button.login p {
+    margin: 0;
+    position: relative;
+    font-size: 20px;
+    color: var(--gray)
+}
+
+button.login::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    left: 0;
+    bottom: -7px;
+    background: var(--text-color);
+    height: 2px;
+    transition: 0.3s ease-out;
+}
+
+button.login p::before {
+    position: absolute;
+    /*   box-sizing: border-box; */
+    content: "Register";
+    width: 0;
+    inset: 0;
+    color: var(--text-color);
+    overflow: hidden;
+    transition: 0.3s ease-out;
+}
+
+button.login:hover::after {
+    width: 100%;
+}
+
+button.login:hover p::before {
+    width: 100%;
+}
+
+button.login:hover svg {
+    transform: translateX(4px);
+    color: var(--text-color)
+}
+
+button.login svg {
+    color: var(--gray);
+    transition: 0.2s;
+    position: relative;
+    width: 15px;
+    transition-delay: 0.2s;
+}
+
+.error{
+    color: red;
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: -50px;
+    margin-bottom: 50px;
+}
+
+.register{
+    text-align: center;
+    font-size: 0.8em;
+    color: var(--gray);
+    margin-top: -20px;
+    padding-bottom: 20px;
+}
+
+.space{
+    margin-left: 0.1rem;
+}
