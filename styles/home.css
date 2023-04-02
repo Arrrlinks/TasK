@@ -18,6 +18,7 @@
 }
 
 .homePage{
+    background-color: var(--bg-color);
     height: 75vh;
     width: 100vw;
     display: flex;
@@ -27,8 +28,10 @@
     box-shadow: 1px 4px 4px 0px rgba(0,0,0,0.2);
     -webkit-box-shadow: 1px 4px 4px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 1px 4px 4px 0px rgba(0,0,0,0.2);
-    position: relative;
+    position: fixed;
+    z-index:999;
 }
+
 
 .pagesDisplay{
     display: flex;
@@ -116,4 +119,88 @@
 
 .login a:hover{
     text-decoration: underline;
+}
+
+.taskContainer{
+    position: relative;
+    top: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.task {
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--gray);
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto 800px auto;
+}
+
+.task h2 {
+    margin: 0;
+}
+
+.description {
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    margin-top: 40px;
+    padding: 10px;
+    flex: 3;
+}
+
+.select {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task select {
+    width: 50%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    background-color: var(--light-gray);
+    transition: .3s linear;
+    padding: 0 0 0 1rem;
+}
+
+.searchBar{
+    margin-bottom: 30px;
+}
+
+.searchBar input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    font-size: 16px;
+    color: var(--text-color);
+    transition: .3s linear;
+    outline: none;
+    text-align: center;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--text-color);
+}
+
+.createTask{
+    margin-bottom: 30px;
+}
+.createTask button{
+    font-weight: bold;
+    color: var(--bg-color);
+    background-color: var(--text-color);
+    display: inline-block;
+    padding: 7px 24px;
+    border: 1.8px solid var(--text-color);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.1s;
 }
