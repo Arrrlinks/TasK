@@ -15,7 +15,7 @@
             </a>
         <?php } ?>
     </div>
-    <div class="title">
+    <div class="title" onclick="window.location.href='index.php'">
         <span class="title1" id="title1">Tas</span><span class="title2" id="title2">K</span>
     </div>
     <div class="pagesDisplay" id="pagesDisplay">
@@ -33,18 +33,22 @@
     </div>
 </div>
 <div class="taskContainer" id="taskContainer">
-    <div class="searchBar">
-        <form method="get">
-            <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
-            <input type="text" placeholder="Search" name="q" id="searchBar">
-        </form>
-    </div>
-    <div class="createTask">
-        <button onclick="window.location.href='?createTask&page=<?= $_GET['page'] ?>'">Create a TasK</button>
-    </div>
+    <?php if (isset($_GET['page'])) { ?>
+        <div class="searchCreateDiv" id="searchCreateDiv">
+            <div class="searchBar">
+                <form method="get">
+                    <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
+                    <input type="text" placeholder="Search" name="q" id="searchBar">
+                </form>
+            </div>
+            <div class="createTask"">
+                <button id="createTaskBtn">Create a TasK</button>
+            </div>
+        </div>
+    <?php } ?>
 
     <div class="task">
-        <h2>Titre</h2>
+        <h2>Titreaaaaaaaaas</h2>
         <div class="description">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus scelerisque volutpat. Nulla molestie
                 dolor est, non fringilla leo finibus at. Sed sit amet massa ac ipsum accumsan commodo quis sed odio.
@@ -65,6 +69,7 @@
 <script src="../scripts/addPage.js"></script>
 <script src="../scripts/scroll.js"></script>
 <script src="../scripts/changeColor.js"></script>
+<script src="../scripts/addTask.js"></script>
 
 <?php if ($newPage) { ?>
     <script>successAlert()</script>

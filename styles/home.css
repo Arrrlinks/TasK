@@ -15,6 +15,8 @@
 .title{
     text-align: center;
     padding: 0;
+    user-select: none;
+    cursor: pointer;
 }
 
 .homePage{
@@ -131,6 +133,15 @@
     align-items: center;
 }
 
+.searchCreateDiv{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .task {
     padding: 30px;
     border-radius: 10px;
@@ -142,15 +153,23 @@
 }
 
 .task h2 {
+    width: 88.8%;
     margin: 0;
+    position: absolute;
+    font-weight: bold;
 }
 
 .description {
     background-color: var(--light-gray);
     border-radius: 10px;
     margin-top: 40px;
-    padding: 10px;
+    padding: 10px 20px;
+    height: 120px;
     flex: 3;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .select {
@@ -203,4 +222,118 @@
     font-size: 12px;
     cursor: pointer;
     transition: 0.1s;
+}
+
+.nope {
+    animation: nope 0.3s;
+}
+
+#addTaskDiv{
+    width: 100%;
+}
+
+#titleTask{
+    width: 90%;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.description textarea{
+    width: 100%;
+    height: 90%;
+    resize: none;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.options{
+    margin-top: -50px;
+    margin-bottom: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.optionDiv{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.optionDiv button{
+    font-weight: bold;
+    color: var(--bg-color);
+    background-color: var(--text-color);
+    display: inline-block;
+    padding: 7px 24px;
+    border: 1.8px solid var(--text-color);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.1s;
+    margin-left: 20px;
+}
+
+.option{
+    margin-top: 10px;
+    width: 82%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--gray);
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.option input{
+    width: 90%;
+    height: 40px;
+    border: none;
+    font-size: 16px;
+    color: var(--text-color);
+    transition: .3s linear;
+    outline: none;
+    text-align: center;
+    background-color: var(--gray);
+    border-bottom: 1px solid var(--text-color);
+}
+
+.option button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: -2.3%;
+    margin-left: 2.3%;
+}
+
+.option ion-icon{
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--title-primary);
+}
+
+@keyframes nope {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(15px);
+    }
+    75% {
+        transform: translateX(-15px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
