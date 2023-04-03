@@ -14,7 +14,7 @@ window.addEventListener('scroll', function () {
     let element2 = document.getElementById('title2');
     let newFontSize = 90 - scrollPosition / 5;
     let newHeight = 75 - scrollPosition / 5;
-    let newTop = 85 - scrollPosition / 5;
+    let newTop = 85 - scrollPosition / 8;
     if (newFontSize >= 40) {
         element.style.fontSize = newFontSize + 'px';
         element2.style.fontSize = newFontSize + 'px';
@@ -30,7 +30,7 @@ window.addEventListener('scroll', function () {
     if (newTop >= 60) {
         taskContainer.style.top = newTop + 'vh';
     } else {
-        taskContainer.style.top = 600 + 'px';
+        taskContainer.style.top = 60 + 'vh';
     }
 });
 

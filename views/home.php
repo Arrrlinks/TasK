@@ -35,11 +35,12 @@
 <div class="taskContainer" id="taskContainer">
     <div class="searchBar">
         <form method="get">
+            <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
             <input type="text" placeholder="Search" name="q" id="searchBar">
         </form>
     </div>
     <div class="createTask">
-        <button onclick="window.location.href='?createTask'">Create a TasK</button>
+        <button onclick="window.location.href='?createTask&page=<?= $_GET['page'] ?>'">Create a TasK</button>
     </div>
 
     <div class="task">
