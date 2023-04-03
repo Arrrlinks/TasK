@@ -14,7 +14,7 @@ window.addEventListener('scroll', function () {
     let element2 = document.getElementById('title2');
     let newFontSize = 90 - scrollPosition / 5;
     let newHeight = 75 - scrollPosition / 5;
-    let newTop = 800 - scrollPosition / 2;
+    let newTop = 85 - scrollPosition / 5;
     if (newFontSize >= 40) {
         element.style.fontSize = newFontSize + 'px';
         element2.style.fontSize = newFontSize + 'px';
@@ -27,8 +27,8 @@ window.addEventListener('scroll', function () {
     } else {
         homePage.style.height = 19 + 'vh';
     }
-    if (newTop >= 600) {
-        taskContainer.style.top = newTop + 'px';
+    if (newTop >= 60) {
+        taskContainer.style.top = newTop + 'vh';
     } else {
         taskContainer.style.top = 600 + 'px';
     }

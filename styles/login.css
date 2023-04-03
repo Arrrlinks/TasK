@@ -124,7 +124,7 @@ button.login p {
     margin: 0;
     position: relative;
     font-size: 20px;
-    color: var(--gray)
+    color: var(--text-color)
 }
 
 button.login::after {
@@ -163,7 +163,7 @@ button.login:hover svg {
 }
 
 button.login svg {
-    color: var(--gray);
+    color: var(--text-color);
     transition: 0.2s;
     position: relative;
     width: 15px;
@@ -181,7 +181,7 @@ button.login svg {
 .register{
     text-align: center;
     font-size: 0.8em;
-    color: var(--gray);
+    color: var(--text-color);
     margin-top: -20px;
     padding-bottom: 20px;
 }
