@@ -17,6 +17,8 @@
     padding: 0;
     user-select: none;
     cursor: pointer;
+    position: absolute;
+    z-index: 9999;
 }
 
 .homePage{

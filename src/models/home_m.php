@@ -29,3 +29,13 @@ function getPages(){
         return null;
     }
 }
+
+if(isset($_GET['page'])){
+    $db = dbConnect();
+    $getPage = $db->prepare('SELECT * FROM pages WHERE id = ?');
+    $getPage->execute(array($_GET['page']));
+    $page = $getPage->fetchAll();
+    if(!$page[0]['idOwner'] == $_SESSION['id']){
+        header('Location: index.php');
+    }
+}

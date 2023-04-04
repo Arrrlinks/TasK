@@ -5,7 +5,7 @@ function addOption() {
     const optionDiv = document.createElement('div');
     optionDiv.setAttribute('class', 'option');
     optionDiv.innerHTML = `
-        <input type="text" name="option[]" id="option" placeholder="Option" value="Finished" required>
+        <input type="text" name="option[]" id="option" placeholder="New Option" required>
         <button type="button" onclick="removeOption()"><ion-icon name="remove-circle-outline" ></ion-icon></button>
     `;
     const options = document.getElementById('options');
@@ -13,8 +13,8 @@ function addOption() {
 }
 
 function removeOption() {
-    const optionDiv = document.getElementsByClassName('option');
-    optionDiv[optionDiv.length - 1].remove();
+    const optionDiv = event.target.parentNode;
+    optionDiv.parentNode.removeChild(optionDiv);
 }
 createTaskBtn.addEventListener('click', () => {
     if (document.getElementById('addTaskDiv') == null) {
@@ -33,15 +33,15 @@ createTaskBtn.addEventListener('click', () => {
                         <h2>Options</h2><button onclick="addOption()" type="button" id="addOptionBtn">Add an option</button>
                     </div>
                     <div class="option">
-                        <input type="text" name="option[]" id="option" placeholder="Option" value="Not started" required>
+                        <input type="text" name="option[]" id="option" placeholder="New Option" value="Not started" required>
                         <button type="button" onclick="removeOption()"><ion-icon name="remove-circle-outline" ></ion-icon></button>
                     </div>
                     <div class="option">
-                        <input type="text" name="option[]" id="option" placeholder="Option" value="In Progress" required>
+                        <input type="text" name="option[]" id="option" placeholder="New Option" value="In Progress" required>
                         <button type="button" onclick="removeOption()"><ion-icon name="remove-circle-outline" ></ion-icon></button>
                     </div>
                     <div class="option">
-                        <input type="text" name="option[]" id="option" placeholder="Option" value="Finished" required>
+                        <input type="text" name="option[]" id="option" placeholder="New Option" value="Finished" required>
                         <button type="button" onclick="removeOption()"><ion-icon name="remove-circle-outline" ></ion-icon></button>
                     </div>
                 </div>

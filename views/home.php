@@ -15,7 +15,7 @@
             </a>
         <?php } ?>
     </div>
-    <div class="title" onclick="window.location.href='index.php'">
+    <div id="wholeTitle" class="title" onclick="window.location.href='index.php'">
         <span class="title1" id="title1">Tas</span><span class="title2" id="title2">K</span>
     </div>
     <div class="pagesDisplay" id="pagesDisplay">
@@ -34,38 +34,100 @@
 </div>
 <div class="taskContainer" id="taskContainer">
     <?php if (isset($_GET['page'])) { ?>
-        <div class="searchCreateDiv" id="searchCreateDiv">
-            <div class="searchBar">
-                <form method="get">
-                    <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
-                    <input type="text" placeholder="Search" name="q" id="searchBar">
-                </form>
-            </div>
-            <div class="createTask"">
-                <button id="createTaskBtn">Create a TasK</button>
-            </div>
+    <div class="searchCreateDiv" id="searchCreateDiv">
+        <div class="searchBar">
+            <form method="get">
+                <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
+                <input type="text" placeholder="Search" name="q" id="searchBar">
+            </form>
         </div>
-    <?php } ?>
-
-    <div class="task">
-        <h2>Titreaaaaaaaaas</h2>
-        <div class="description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus scelerisque volutpat. Nulla molestie
-                dolor est, non fringilla leo finibus at. Sed sit amet massa ac ipsum accumsan commodo quis sed odio.
-                Donec non leo aliquam, scelerisque eros sit amet, mattis nibh. In imperdiet erat nisl, sed venenatis
-                erat euismod at.</p>
-        </div>
-        <div class="select">
-            <select class="tasks-select">
-                <option value="option1" style="--color:red">Option 1</option>
-                <option value="option2" style="--color:#FF00AA">Option 2</option>
-                <option value="option3" style="--color:#00AAFF">Option 3</option>
-            </select>
-        </div>
+        <div class="createTask"
+        ">
+        <button id="createTaskBtn">Create a TasK</button>
     </div>
-
 </div>
+<?php } ?>
 
+<div class="task">
+    <h2>Titre</h2>
+    <div class="description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus scelerisque volutpat. Nulla molestie
+            dolor est, non fringilla leo finibus at. Sed sit amet massa ac ipsum accumsan commodo quis sed odio.
+            Donec non leo aliquam, scelerisque eros sit amet, mattis nibh. In imperdiet erat nisl, sed venenatis
+            erat euismod at.</p>
+    </div>
+    <div class="select">
+        <select class="tasks-select">
+            <option value="option1" style="--color:red">Option 1</option>
+            <option value="option2" style="--color:#FF00AA">Option 2</option>
+            <option value="option3" style="--color:#00AAFF">Option 3</option>
+        </select>
+    </div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <script src="../scripts/addPage.js"></script>
 <script src="../scripts/scroll.js"></script>
 <script src="../scripts/changeColor.js"></script>
