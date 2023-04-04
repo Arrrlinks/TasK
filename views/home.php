@@ -24,7 +24,7 @@
                 <ion-icon name="add-outline"></ion-icon>
             </div>
             <?php foreach ($pages as $page) { ?>
-                <div class="page" onclick="window.location.href='index.php?page=<?= $page['id'] ?>'">
+                <div class="page" id="<?= $page['id'] ?>" onclick="window.location.href='index.php?page=<?= $page['id'] ?>'">
                     <div class="pageName"><?= $page['title'] ?></div>
                 </div>
             <?php }
@@ -35,7 +35,7 @@
 <div class="taskContainer" id="taskContainer">
     <?php if (isset($_GET['page'])) { ?>
         <div class="menu">
-            <button><ion-icon name="trash-outline"></ion-icon></button>
+            <button onclick="deletePage('<?= $_GET['page'] ?>')"><ion-icon name="trash-outline"></ion-icon></button>
             <button onclick="window.location.href='?options&page=<?= $_GET['page'] ?>'"><ion-icon name="pricetags-outline"></ion-icon></button>
         </div>
         <div class="searchCreateDiv" id="searchCreateDiv">
@@ -72,10 +72,11 @@
 
 </div>
 <script src="../scripts/addPage.js"></script>
+<script src="../scripts/deletePage.js"></script>
 <script src="../scripts/scroll.js"></script>
-<script src="../scripts/changeColor.js"></script>
+<!--script src="../scripts/changeColor.js"></script-->
 <script src="../scripts/createTask.js"></script>
-
+<script src="../scripts/currentPage.js"></script>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('views/template.php'); ?>
