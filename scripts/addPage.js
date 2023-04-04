@@ -32,21 +32,3 @@ function addPage() {
         }
     });
 }
-
-function successAlert() {
-    Swal.fire({
-        icon: 'success',
-        title: 'Created !',
-        showConfirmButton: false,
-        timer: 2000
-    });
-}
-
-function errorAlert() {
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Something went wrong!',
-        footer: '<a href="">Why do I have this issue?</a>'
-    });
-}

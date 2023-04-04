@@ -14,6 +14,9 @@ elseif(isset($_GET['account'])){
 elseif(isset($_GET['pwd'])){
     require_once('src/controllers/pwdChange_c.php');
 }
+elseif (isset($_GET['options'])) {
+    require_once('src/controllers/options_c.php');
+}
 else{
     require_once('src/controllers/home_c.php');
 }

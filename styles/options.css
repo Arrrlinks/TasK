@@ -1,0 +1,78 @@
+.options{
+    margin-bottom: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.option{
+    margin-top: 10px;
+    width: 82%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--gray);
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.option input, #addTaskForm{
+    width: 90%;
+    height: 40px;
+    border: none;
+    font-size: 16px;
+    color: var(--text-color);
+    transition: .3s linear;
+    outline: none;
+    text-align: center;
+    background-color: var(--gray);
+}
+
+.option input{
+    width: 100%;
+    border-bottom: 1px solid var(--text-color);
+}
+
+
+
+
+.option button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: -2.3%;
+    margin-left: 2.3%;
+}
+
+.option ion-icon{
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--title-primary);
+}
+
+
+.optionDiv{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.optionDiv button{
+    font-weight: bold;
+    color: var(--bg-color);
+    background-color: var(--text-color);
+    display: inline-block;
+    padding: 7px 24px;
+    border: 1.8px solid var(--text-color);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.1s;
+    margin-left: 20px;
+}

@@ -16,7 +16,7 @@ window.addEventListener('scroll', function () {
     let newFontSize = 90 - scrollPosition / 5;
     let newHeight = 75 - scrollPosition / 5;
     let newTop = 85 - scrollPosition / 8;
-    let newMargin = 0 - scrollPosition / 5;
+    let newMargin = 0 - scrollPosition / 2;
     if (newFontSize >= 40) {
         element.style.fontSize = newFontSize + 'px';
         element2.style.fontSize = newFontSize + 'px';
@@ -24,16 +24,16 @@ window.addEventListener('scroll', function () {
         element.style.fontSize = 40 + 'px';
         element2.style.fontSize = 40 + 'px';
     }
-    if(newMargin >= -8) {
-        title.style.marginTop = newMargin + '%';
+    if(newMargin >= -100) {
+        title.style.top = 'unset';
     }
     else {
-        title.style.marginTop = -8 + '%';
+        title.style.top = 15 + 'px';
     }
-    if (newHeight >= 19) {
+    if (newHeight >= 20) {
         homePage.style.height = newHeight + 'vh';
     } else {
-        homePage.style.height = 19 + 'vh';
+        homePage.style.height = 20 + 'vh';
     }
     if (newTop >= 60) {
         taskContainer.style.top = newTop + 'vh';
