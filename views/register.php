@@ -2,6 +2,9 @@
 <?php $css = "register.css"; ?>
 
 <?php ob_start(); ?>
+<div class="title">
+    <a href="?"><span class="title1">Tas</span><span class="title2">k</span></a>
+</div>
 <div id="login">
     <h1>Register</h1>
     <form method="post">

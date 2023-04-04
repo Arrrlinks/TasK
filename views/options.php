@@ -1,8 +1,9 @@
 <?php $title = "Options"; ?>
 <?php $css = "options.css"; ?>
 <?php ob_start(); ?>
-
-
+<div class="title">
+        <a href="?page=<?= $_GET['page'] ?>"><span class="title1">Tas</span><span class="title2">k</span></a>
+</div>
     <div class="options" id="options">
         <div class="optionDiv">
             <h2>Options</h2>
