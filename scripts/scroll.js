@@ -11,11 +11,13 @@ const element2 = document.getElementById('title2');
 const homePage = document.getElementById('homePage');
 const taskContainer = document.getElementById('taskContainer');
 const title = document.getElementById('wholeTitle');
+const menu = document.getElementById('menu');
 window.addEventListener('scroll', function () {
     let scrollPosition = window.scrollY;
     let newFontSize = 90 - scrollPosition / 5;
     let newHeight = 75 - scrollPosition / 5;
     let newTop = 85 - scrollPosition / 8;
+    let newTop2 = 85 - scrollPosition / 5;
     let newMargin = 0 - scrollPosition / 2;
     if (newFontSize >= 40) {
         element.style.fontSize = newFontSize + 'px';
@@ -30,15 +32,21 @@ window.addEventListener('scroll', function () {
     else {
         title.style.top = 15 + 'px';
     }
-    if (newHeight >= 20) {
+    if (newHeight >= 18) {
         homePage.style.height = newHeight + 'vh';
     } else {
-        homePage.style.height = 20 + 'vh';
+        homePage.style.height = 18 + 'vh';
     }
-    if (newTop >= 60) {
+    if (newTop >= 65) {
         taskContainer.style.top = newTop + 'vh';
     } else {
-        taskContainer.style.top = 60 + 'vh';
+        taskContainer.style.top = 65 + 'vh';
+    }
+    if (newTop2 >= 25) {
+        menu.style.top = newTop2 + 'vh';
+    }
+    else {
+        menu.style.top = 25 + 'vh';
     }
 });
 
