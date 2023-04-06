@@ -33,7 +33,7 @@ function removeOption(id,page) {
     xhr.open('POST', '../scripts/options.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
-        window.location.href = 'index.php?options&page='+page;
+        window.location.href = '?options&page='+page;
     }
     xhr.send('id='+id);
 }

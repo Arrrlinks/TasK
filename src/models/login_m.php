@@ -18,7 +18,7 @@ function login()
             $_SESSION['email'] = $email;
             $_SESSION['Fname'] = $result['firstName'];
             $_SESSION['Lname'] = $result['lastName'];
-            header('Location: index.php');
+            header('Location: ?');
         }else{
             return '<p class="error">Wrong email or password</p>';
         }

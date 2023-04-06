@@ -15,7 +15,7 @@
             </a>
         <?php } ?>
     </div>
-    <div id="wholeTitle" class="title" onclick="window.location.href='index.php'">
+    <div id="wholeTitle" class="title" onclick="window.location.href='?'">
         <span class="title1" id="title1">Tas</span><span class="title2" id="title2">K</span>
     </div>
     <div class="pagesDisplay" id="pagesDisplay">
@@ -24,7 +24,7 @@
                 <ion-icon name="add-outline"></ion-icon>
             </div>
             <?php foreach ($pages as $page) { ?>
-                <div class="page" id="<?= $page['id'] ?>" onclick="window.location.href='index.php?page=<?= $page['id'] ?>'">
+                <div class="page" id="<?= $page['id'] ?>" onclick="window.location.href='?page=<?= $page['id'] ?>'">
                     <div class="pageName"><?= $page['title'] ?></div>
                 </div>
             <?php }

@@ -8,7 +8,7 @@ function ifSessionExit(){
         return true;
     }
     else{
-        header('Location: index.php');
+        header('Location: ?');
         return false;
     }
 }
@@ -18,7 +18,7 @@ function ifNotSessionExit(){
         return true;
     }
     else{
-        header('Location: index.php?login');
+        header('Location: ?login');
         return false;
     }
 }

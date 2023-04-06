@@ -13,7 +13,7 @@ function createPage(){
             $addOptions->execute(array('To do', $idPage));
             $addOptions->execute(array('In progress', $idPage));
             $addOptions->execute(array('Done', $idPage));
-            header('Location: index.php?page='.$idPage);
+            header('Location: ?page='.$idPage);
         }
     }
 }
@@ -36,7 +36,7 @@ if(isset($_GET['page'])){
     $getPage->execute(array($_GET['page']));
     $page = $getPage->fetchAll();
     if(!$page[0]['idOwner'] == $_SESSION['id']){
-        header('Location: index.php');
+        header('Location: ?');
     }
 }
 

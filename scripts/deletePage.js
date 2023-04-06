@@ -13,7 +13,7 @@ function deletePage(pageId) {
             xhr.open('POST', '../scripts/deletePage.php', true);
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function() {
-                window.location.href = 'index.php';
+                window.location.href = '?';
             }
             xhr.send('id='+pageId);
         }

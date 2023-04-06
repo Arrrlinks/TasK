@@ -28,7 +28,7 @@ function createUser(){
             $_SESSION['email'] = $email;
             $_SESSION['Fname'] = $Fname;
             $_SESSION['Lname'] = $Lname;
-            header('Location: index.php');
+            header('Location: ?');
         }
         else{
             return '<p class="error">passwords do not match</p>';
