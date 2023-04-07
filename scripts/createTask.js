@@ -8,7 +8,7 @@ createTaskBtn.addEventListener('click', () => {
                 <div class="task">
                         <h2><input type="text" name="title" id="titleTask" placeholder="Title" required></h2>
                         <div class="description">
-                            <textarea name="description" id="description" cols="70" rows="7" placeholder="Description" required></textarea>
+                            <textarea name="description" id="description" cols="70" rows="6" maxlength="512" placeholder="Description" required></textarea>
                         </div>
                 </div>
                 <div class="addTaskBtnDiv">

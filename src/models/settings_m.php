@@ -20,3 +20,10 @@ function createOption($idPage) {
         $req->execute(array($_POST['modify'], $_POST['id']));
     }
 }
+
+function getPage($idPage) {
+    $db = dbConnect();
+    $req = $db->prepare('SELECT * FROM pages WHERE id = ?');
+    $req->execute(array($idPage));
+    return $req->fetch();
+}
