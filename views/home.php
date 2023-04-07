@@ -35,7 +35,7 @@
 <?php if(isset($_GET['page'])){ ?>
     <div class="menu" id="menu">
         <button onclick="deletePage('<?= $_GET['page'] ?>')"><ion-icon name="trash-outline"></ion-icon></button>
-        <button onclick="window.location.href='?options&page=<?= $_GET['page'] ?>'"><ion-icon name="pricetags-outline"></ion-icon></button>
+        <button onclick="window.location.href='?settings&page=<?= $_GET['page'] ?>'"><ion-icon name="settings-outline"></ion-icon></button>
     </div>
 <?php } ?>
 <div class="taskContainer" id="taskContainer">

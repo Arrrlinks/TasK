@@ -275,6 +275,7 @@
     outline: none;
     border: none;
     background: none;
+    font-size: 16px;
 }
 
 .menu{
@@ -345,5 +346,24 @@
     }
     .login ion-icon{
         margin-right: -64px;
+    }
+    .menu{
+        width: 30px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        background: var(--bg-color);
+        padding: 10px;
+        border-radius: 0 20px 20px 0;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+        gap:15px 0;
+    }
+
+    .menu button{
+        font-size: 20px;
+
     }
 }
