@@ -2,7 +2,7 @@
 session_start();
 require_once('src/init.php');
 
-ifNotSessionExit();
+ifNoSessionLogin();
 
 function getAccount(){
     $db = dbConnect();

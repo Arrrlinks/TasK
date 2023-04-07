@@ -13,7 +13,7 @@ function ifSessionExit(){
     }
 }
 
-function ifNotSessionExit(){
+function ifNoSessionLogin(){
     if(!isset($_SESSION['user'])){
         return true;
     }
