@@ -2,7 +2,7 @@
 <?php $css = "users.css"; ?>
 <?php ob_start(); ?>
     <div class="title">
-        <a href="?page=<?= $_GET['page'] ?>"><span class="title1">Tas</span><span class="title2">k</span></a>
+        <a href="?page=<?= $_GET['page'] ?>"><span class="title1">Tas</span><span class="title2">K</span></a>
     </div>
     <div class="users" id="users">
         <div class="userDiv">
