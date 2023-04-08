@@ -1,4 +1,4 @@
-function deletePage(pageId,userId) {
+function leavePage(page,id) {
     Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -8,14 +8,14 @@ function deletePage(pageId,userId) {
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
-        if (result.isConfirmed) {
+        if(result.isConfirmed) {
             const xhr = new XMLHttpRequest();
-            xhr.open('POST', '../scripts/deletePage.php', true);
+            xhr.open('POST', '../scripts/leavePage.php', true);
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhr.onload = function() {
-                window.location.href = '?';
+                window.location.href = '?'
             }
-            xhr.send('idPage='+pageId+'&idUser='+userId);
+            xhr.send('id='+id+'&page='+page);
         }
-    });
+    })
 }

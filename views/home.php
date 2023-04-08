@@ -5,6 +5,9 @@
     <div class="login">
         <?php if (isset($_SESSION['Lname'])) { ?>
             <a href="?account">
+                <?php if ($notifications == true) { ?>
+                    <div class="notification"></div>
+                <?php } ?>
                 <ion-icon name="person-circle-outline"></ion-icon>
                 <span><?= strtoupper($_SESSION['Lname']) . ' ' . ucfirst($_SESSION['Fname']) ?></span>
             </a>
@@ -32,12 +35,26 @@
         <div></div>
     </div>
 </div>
-<?php if(isset($_GET['page'])){ ?>
+<?php if (isset($_GET['page'])){ ?>
+<?php if (isOwner($_GET['page'])) { ?>
     <div class="menu" id="menu">
-        <button onclick="deletePage('<?= $_GET['page'] ?>')"><ion-icon name="trash-outline"></ion-icon></button>
-        <button onclick="window.location.href='?settings&page=<?= $_GET['page'] ?>'"><ion-icon name="settings-outline"></ion-icon></button>
+        <button onclick="deletePage('<?= $_GET['page'] ?>','<?= $_SESSION['id'] ?>')">
+            <ion-icon name="trash-outline"></ion-icon>
+        </button>
+        <button onclick="window.location.href='?settings&page=<?= $_GET['page'] ?>'">
+            <ion-icon name="settings-outline"></ion-icon>
+        </button>
+        <button onclick="window.location.href='?users&page=<?= $_GET['page'] ?>'">
+            <ion-icon name="person-outline"></ion-icon>
+        </button>
     </div>
-<?php } ?>
+<?php } else { ?>
+    <div class="menu doNotOwn" id="menu">
+        <button onclick="leavePage('<?= $_GET['page'] ?>','<?= $_SESSION['id'] ?>')">
+            <ion-icon name="exit-outline"></ion-icon>
+        </button>
+    </div>
+<?php }} ?>
 <div class="taskContainer" id="taskContainer">
     <?php if (isset($_GET['page'])) { ?>
         <div class="searchCreateDiv" id="searchCreateDiv">
@@ -64,7 +81,8 @@
                     <select class="tasks-select">
                         <?php
                         foreach ($options as $option) { ?>
-                            <option value="<?= $option['id'] ?>" <?= $option['isSelected'] ? 'selected' : '' ?>><?= $option['title'] ?></option>
+                            <option
+                                value="<?= $option['id'] ?>" <?= $option['isSelected'] ? 'selected' : '' ?>><?= $option['title'] ?></option>
                         <?php } ?>
                     </select>
                 </div>
@@ -79,6 +97,6 @@
 <!--script src="../scripts/changeColor.js"></script-->
 <script src="../scripts/createTask.js"></script>
 <script src="../scripts/currentPage.js"></script>
-
+<script src="../scripts/leavePage.js"></script>
 <?php $content = ob_get_clean(); ?>
 <?php require('views/template.php'); ?>

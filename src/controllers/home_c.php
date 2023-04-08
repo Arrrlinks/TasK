@@ -2,6 +2,7 @@
 require_once('src/models/home_m.php');
 $newPage = createPage();
 $pages = getPages();
+$notifications = getNotifications();
 $tasks = null;
 if(isset($_GET['page'])){
     createTasks($_GET['page']);

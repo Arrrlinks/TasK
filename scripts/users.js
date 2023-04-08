@@ -1,17 +1,15 @@
 const input= document.getElementsByTagName('input');
 
-function addOption() {
-    const optionDiv = document.createElement('div');
-    optionDiv.setAttribute('class', 'option');
-    optionDiv.innerHTML = `
+function addUser() {
+    const userDiv = document.createElement('div');
+    userDiv.setAttribute('class', 'user');
+    userDiv.innerHTML = `
         <form method="POST" id="addTaskForm">
-            <input type="text" name="option" id="option" placeholder="New Option" required>
+            <input type="text" name="user" id="user" placeholder="Enter the email of the user you want to add" required>
         </form>
-        <button type="button" onclick="removeOption()"><ion-icon name="remove-circle-outline" ></ion-icon></button>
     `;
-    const options = document.getElementById('options');
-    options.append(optionDiv);
-    const input = optionDiv.getElementsByTagName('input');
+    const user = document.getElementById('users');
+    user.append(userDiv);
     input[input.length-1].focus();
     for (let i = 0; i < input.length; i++) {
         let value = input[i].value;
@@ -21,21 +19,17 @@ function addOption() {
                 form.submit();
             }
             else {
-                optionDiv.parentNode.removeChild(optionDiv);
+                userDiv.parentNode.removeChild(userDiv);
             }
         });
     }
 }
 
-function removeOption(id,page) {
-
+function removeUser(id,page) {
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', '../scripts/options.php', true);
+    xhr.open('POST', '../scripts/removeUser.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.onload = function() {
-        window.location.href = '?options&page='+page;
-    }
-    xhr.send('id='+id);
+    xhr.send('id='+id+'&page='+page);
 }
 
 for (let i = 0; i < input.length; i++) {
@@ -45,5 +39,14 @@ for (let i = 0; i < input.length; i++) {
             const form = event.target.parentNode;
             form.submit();
         }
+    });
+}
+
+function alertUserDoesntExist() {
+    Swal.fire({
+        title: 'User does not exist',
+        text: 'Please enter a valid email',
+        icon: 'error',
+        confirmButtonText: 'Ok'
     });
 }

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('src/init.php');
-ifNotSessionExit();
+ifNoSessionLogin();
 
 function pwdChange(){
     if(isset($_POST['current']) && isset($_POST['new'])){

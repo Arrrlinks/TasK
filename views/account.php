@@ -12,6 +12,7 @@
     <p>Last Name : <?= $infos['lastName'] ?></p>
     <div class="buttonContainer">
         <button onclick="window.location.href='?pwd'">Change password</button>
+        <button onclick="window.location.href='?notifications'">Notifications</button>
         <button onclick="window.location.href='?logout'">Logout</button>
     </div>
 </div>

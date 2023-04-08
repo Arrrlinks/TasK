@@ -17,6 +17,12 @@ elseif(isset($_GET['pwd'])){
 elseif (isset($_GET['settings'])) {
     require_once('src/controllers/settings_c.php');
 }
+elseif (isset($_GET['users'])) {
+    require_once('src/controllers/users_c.php');
+}
+elseif (isset($_GET['notifications'])) {
+    require_once('src/controllers/notifications_c.php');
+}
 else{
     require_once('src/controllers/home_c.php');
 }

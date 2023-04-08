@@ -21,8 +21,8 @@ function createPage(){
 function getPages(){
     if(isset($_SESSION['id'])) {
         $db = dbConnect();
-        $getPages = $db->prepare('SELECT * FROM pages WHERE idOwner = ?');
-        $getPages->execute(array($_SESSION['id']));
+        $getPages = $db->prepare('SELECT pages.id,pages.idOwner,pages.title FROM pages LEFT JOIN sharedPages ON pages.id = sharedPages.idPage WHERE pages.idOwner = ? OR (sharedPages.idUser = ? AND sharedPages.isAccepted = 1)');
+        $getPages->execute(array($_SESSION['id'],$_SESSION['id']));
         return $getPages->fetchAll();
     }
     else {
@@ -32,10 +32,10 @@ function getPages(){
 
 if(isset($_GET['page'])){
     $db = dbConnect();
-    $getPage = $db->prepare('SELECT * FROM pages WHERE id = ?');
-    $getPage->execute(array($_GET['page']));
+    $getPage = $db->prepare('SELECT idOwner,sharedPages.idUser FROM pages LEFT JOIN sharedPages ON pages.id = sharedPages.idPage WHERE pages.id = ? AND (pages.idOwner = ? OR (sharedPages.idUser = ? AND sharedPages.isAccepted = 1))');
+    $getPage->execute(array($_GET['page'],$_SESSION['id'],$_SESSION['id']));
     $page = $getPage->fetchAll();
-    if(!$page[0]['idOwner'] == $_SESSION['id']){
+    if(!$page) {
         header('Location: ?');
     }
 }
@@ -66,4 +66,32 @@ function getOptions($pageID)
     $getOptions->execute(array($pageID));
     return $getOptions->fetchAll();
 
+}
+
+function getNotifications() {
+    if(isset($_SESSION['id'])) {
+        $db = dbConnect();
+        $req = $db->prepare('SELECT * FROM notifications WHERE idUser = ?');
+        $req->execute(array($_SESSION['id']));
+        if($req->fetchAll()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+
+
+function isOwner($pageID) {
+    $db = dbConnect();
+    $req = $db->prepare('SELECT idOwner FROM pages WHERE id = ?');
+    $req->execute(array($pageID));
+    $owner = $req->fetch();
+    if($owner['idOwner'] == $_SESSION['id']) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
