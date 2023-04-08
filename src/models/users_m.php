@@ -30,13 +30,22 @@ function createUser($idPage) {
         $req->execute(array($_POST['user']));
         $idUser = $req->fetch();
         if($idUser) {
-            $req = $db->prepare('INSERT INTO sharedPages(idUser, idPage) VALUES(?, ?)');
+            $req = $db->prepare('SELECT idUser FROM sharedPages WHERE idUser = ? AND idPage = ?');
             $req->execute(array($idUser['id'], $idPage));
-            $req = $db->prepare('INSERT INTO notifications(idUser,idSender, idPage) VALUES(?,?,?)');
-            $req->execute(array($idUser['id'], $_SESSION['id'], $idPage));
+            $result = $req->fetch();
+            if($result) {
+                return 'alreadyAdded';
+            }
+            else {
+                $req = $db->prepare('INSERT INTO sharedPages(idUser, idPage) VALUES(?, ?)');
+                $req->execute(array($idUser['id'], $idPage));
+                $req = $db->prepare('INSERT INTO notifications(idUser,idSender, idPage) VALUES(?,?,?)');
+                $req->execute(array($idUser['id'], $_SESSION['id'], $idPage));
+            }
+
         }
         else {
-            return false;
+            return 'invalid';
         }
     }
 }

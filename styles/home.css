@@ -318,10 +318,6 @@
     align-items: center;
 }
 
-.doNotOwn{
-    width: 50px;
-}
-
 @keyframes nope {
     0% {
         transform: translateX(0);

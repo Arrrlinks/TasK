@@ -6,7 +6,9 @@
     </div>
     <div class="page">
         <h2 id="title"><?= $page['title'] ?></h2>
-        <button id="editPageName"><ion-icon name="create-outline"></ion-icon></button>
+        <?php if(isPageOwner($_SESSION['id'],$_GET['page'])) { ?>
+            <button id="editPageName"><ion-icon name="create-outline"></ion-icon></button>
+        <?php } ?>
     </div>
     <div class="options" id="options">
         <div class="optionDiv">

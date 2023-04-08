@@ -1,6 +1,7 @@
 <?php
-
+session_start();
 require_once('src/init.php');
+
 function getOptions($idPage) {
     $db = dbConnect();
     $req = $db->prepare('SELECT * FROM options WHERE idPage = ?');

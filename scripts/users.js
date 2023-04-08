@@ -29,22 +29,24 @@ function removeUser(id,page) {
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '../scripts/removeUser.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = function() {
+        window.location.href = '?users&page='+page;
+    }
     xhr.send('id='+id+'&page='+page);
-}
-
-for (let i = 0; i < input.length; i++) {
-    let value = input[i].value;
-    input[i].addEventListener('blur', function(event) {
-        if (value !== event.target.value) {
-            const form = event.target.parentNode;
-            form.submit();
-        }
-    });
 }
 
 function alertUserDoesntExist() {
     Swal.fire({
         title: 'User does not exist',
+        text: 'Please enter a valid email',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+    });
+}
+
+function alertUserAlreadyAdded() {
+    Swal.fire({
+        title: 'User already added',
         text: 'Please enter a valid email',
         icon: 'error',
         confirmButtonText: 'Ok'
