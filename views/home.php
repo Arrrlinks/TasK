@@ -49,9 +49,15 @@
         </button>
     </div>
 <?php } else { ?>
-    <div class="menu doNotOwn" id="menu">
+    <div class="menu" id="menu">
         <button onclick="leavePage('<?= $_GET['page'] ?>','<?= $_SESSION['id'] ?>')">
             <ion-icon name="exit-outline"></ion-icon>
+        </button>
+        <button onclick="window.location.href='?settings&page=<?= $_GET['page'] ?>'">
+            <ion-icon name="settings-outline"></ion-icon>
+        </button>
+        <button onclick="window.location.href='?users&page=<?= $_GET['page'] ?>'">
+            <ion-icon name="person-outline"></ion-icon>
         </button>
     </div>
 <?php }} ?>
@@ -78,12 +84,14 @@
                     <p> <?= $task['description'] ?> </p>
                 </div>
                 <div class="select">
-                    <select class="tasks-select">
+                    <select class="tasks-select" style="--idTask:<?= $task['id'] ?>">
                         <?php
                         foreach ($options as $option) { ?>
-                            <option
-                                value="<?= $option['id'] ?>" <?= $option['isSelected'] ? 'selected' : '' ?>><?= $option['title'] ?></option>
-                        <?php } ?>
+                            <?php if ($option['id'] == $task['selectedOption']) { ?>
+                                <option value="<?= $option['id'] ?>" selected><?= $option['title'] ?></option>
+                            <?php } else { ?>
+                                <option value="<?= $option['id'] ?>"><?= $option['title'] ?></option>
+                        <?php }} ?>
                     </select>
                 </div>
             </div>
@@ -98,5 +106,6 @@
 <script src="../scripts/createTask.js"></script>
 <script src="../scripts/currentPage.js"></script>
 <script src="../scripts/leavePage.js"></script>
+<script src="../scripts/changeOption.js"></script>
 <?php $content = ob_get_clean(); ?>
 <?php require('views/template.php'); ?>

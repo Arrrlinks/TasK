@@ -46,8 +46,15 @@ function createTasks($pageID)
         $title = $_POST['title'];
         $description = $_POST['description'];
         $db = dbConnect();
-        $addTask = $db->prepare('INSERT INTO tasks (title,description,idPage) VALUES (?,?,?)');
-        $addTask->execute(array($title, $description, $pageID));
+        $options = getOptions($pageID);
+        if ($options!=null) {
+            $idOption = $options[0]['id'];
+        }
+        else {
+            $idOption = null;
+        }
+        $addTask = $db->prepare('INSERT INTO tasks (title,description,idPage,selectedOption) VALUES (?,?,?,?)');
+        $addTask->execute(array($title, $description, $pageID, $idOption));
     }
 }
 
