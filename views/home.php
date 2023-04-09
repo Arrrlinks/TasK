@@ -94,6 +94,10 @@
                         <?php }} ?>
                     </select>
                 </div>
+                <div class="icons">
+                    <button class="editTask" id="<?= $task['id'] ?>"><ion-icon name="create-outline"></ion-icon></button>
+                    <button class="removeTask" id="<?= $task['id'] ?>"><ion-icon name="trash-outline"></ion-icon></button>
+                </div>
             </div>
         <?php }
     } ?>
@@ -107,5 +111,6 @@
 <script src="../scripts/currentPage.js"></script>
 <script src="../scripts/leavePage.js"></script>
 <script src="../scripts/changeOption.js"></script>
+<script src="../scripts/task.js"></script>
 <?php $content = ob_get_clean(); ?>
 <?php require('views/template.php'); ?>

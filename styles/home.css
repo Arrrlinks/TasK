@@ -167,7 +167,7 @@
 }
 
 .task h2 {
-    width: 88.8%;
+    width: 75%;
     margin: 0;
     position: absolute;
     font-weight: bold;
@@ -204,6 +204,7 @@
     transition: .3s linear;
     padding: 0 0 0 1rem;
     border: #040F16 1px solid;
+    margin-right: -40px;
 }
 
 .searchBar{
@@ -316,6 +317,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.icons ion-icon{
+    font-size: 20px;
+}
+
+.icons button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#title{
+    background: none;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    position: absolute;
+    font-family: 'Inter', sans-serif;
+    font-size: 25px;
+}
+
+#description{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
 }
 
 @keyframes nope {
