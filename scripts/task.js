@@ -1,5 +1,4 @@
 const editTaskBtn = document.getElementsByClassName('editTask');
-const pageId = new URLSearchParams(window.location.search).get('page');
 let isEditing = 0;
 
 function removeTask() {
@@ -103,8 +102,6 @@ function editTask() {
             cancelBtn.replaceWith(deleteBtn);
             /* add event listener to edit button */
             editBtn.addEventListener('click', editTask);
-            /* add event listener to cancel button */
-            const removeTaskBtn = document.getElementsByClassName('removeTask');
             removeTask();
             isEditing = 0;
         });
@@ -135,8 +132,6 @@ function editTask() {
             this.replaceWith(deleteBtn);
             /* add event listener to edit button */
             editBtn.addEventListener('click', editTask);
-            /* add event listener to cancel button */
-            const removeTaskBtn = document.getElementsByClassName('removeTask');
             removeTask();
             isEditing = 0;
         });
