@@ -62,8 +62,9 @@
     outline: none;
     text-align: center;
     background-color: var(--gray);
-    width: 90%;
+    width: 69%;
     border-bottom: 1px solid var(--text-color);
+    margin: 10px 0;
 }
 
 .userDiv{

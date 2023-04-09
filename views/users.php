@@ -23,8 +23,8 @@
             <div class="user">
                 <?php if (isPageOwner($_SESSION['id'], $_GET['page'])) { ?>
                     <p><?= strtoupper(getUser($user['idUser'])[0]['lastName']) . ' ' . ucfirst(getUser($user['idUser'])[0]['firstName']) . ' <br>' . getUser($user['idUser'])[0]['email'] ?></p>
-                    <button type="button" onclick="removeUser('<?= $user['idUser'] ?>','<?= $_GET['page'] ?>')">
-                        <ion-icon name="remove-circle-outline"></ion-icon>
+                    <button id="<?= $user['idUser'] ?>" type="button" onclick="removeUser('<?= $user['idUser'] ?>','<?= $_GET['page'] ?>')">
+                        <ion-icon name="close-outline"></ion-icon>
                     </button>
                 <?php } else {?>
                 <p class="owner"><?= strtoupper(getUser($user['idUser'])[0]['lastName']) . ' ' . ucfirst(getUser($user['idUser'])[0]['firstName']) . ' <br>' . getUser($user['idUser'])[0]['email'] ?></p>
@@ -35,8 +35,8 @@
             <?php foreach ($waitingUsers as $user) { ?>
                 <div class="user">
                     <p><?= strtoupper(getUser($user['idUser'])[0]['lastName']) . ' ' . ucfirst(getUser($user['idUser'])[0]['firstName']) . ' (Pending) <br>' . getUser($user['idUser'])[0]['email'] ?></p>
-                    <button type="button" onclick="removeUser('<?= $user['idUser'] ?>','<?= $_GET['page'] ?>')">
-                        <ion-icon name="remove-circle-outline"></ion-icon>
+                    <button id="<?= $user['idUser'] ?>" type="button" onclick="removeUser('<?= $user['idUser'] ?>','<?= $_GET['page'] ?>')">
+                        <ion-icon name="close-outline"></ion-icon>
                     </button>
                 </div>
             <?php }
