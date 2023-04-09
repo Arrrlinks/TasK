@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.user{
+.user, .createUser{
     margin-top: 10px;
     width: 30%;
     display: flex;
@@ -17,7 +17,7 @@
     justify-content: center;
 }
 
-.user #addTaskForm{
+.user #addTaskForm, .createUser #addTaskForm{
     width: 90%;
     height: 40px;
     border: none;
@@ -30,7 +30,7 @@
     padding: 20px;
 }
 
-.user p{
+.user p, .createUser p{
     width: 70%;
     display: flex;
     flex-direction: row;
@@ -39,7 +39,7 @@
     border-radius: 10px;
 }
 
-.user button{
+.user button, .createUser button{
     background: none;
     border: none;
     cursor: pointer;
@@ -47,13 +47,13 @@
     margin-left: 2.3%;
 }
 
-.user ion-icon{
+.user ion-icon, .createUser ion-icon{
     font-size: 30px;
     cursor: pointer;
     color: var(--title-primary);
 }
 
-.user input{
+.user input, .createUser input{
     height: 40px;
     border: none;
     font-size: 16px;
