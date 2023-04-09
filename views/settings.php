@@ -6,8 +6,10 @@
     </div>
     <div class="page">
         <h2 id="title"><?= $page['title'] ?></h2>
-        <?php if(isPageOwner($_SESSION['id'],$_GET['page'])) { ?>
-            <button id="editPageName"><ion-icon name="create-outline"></ion-icon></button>
+        <?php if (isPageOwner($_SESSION['id'], $_GET['page'])) { ?>
+            <button id="editPageName">
+                <ion-icon name="create-outline"></ion-icon>
+            </button>
         <?php } ?>
     </div>
     <div class="options" id="options">
@@ -17,13 +19,10 @@
         </div>
         <?php foreach ($options as $option) { ?>
             <div class="option">
-                <form method="POST" id="addTaskForm">
-                    <input type="hidden" name="id" value="<?= $option['id'] ?>">
-                    <input type="text" name="modify" id="option" placeholder="New Option"
-                           value="<?= $option['title'] ?>" required>
-                </form>
-                <button type="button" onclick="removeOption('<?= $option['id'] ?>','<?= $_GET['page'] ?>')">
-                    <ion-icon name="remove-circle-outline"></ion-icon>
+                <input type="text" name="edit" id="<?= $option['id'] ?>" placeholder="New Option"
+                       value="<?= $option['title']  ?>" required>
+                <button type="button" onclick="removeOption('<?= $option['id'] ?>')">
+                    <ion-icon name="close-outline"></ion-icon>
                 </button>
             </div>
         <?php } ?>

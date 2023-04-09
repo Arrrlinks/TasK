@@ -1,6 +1,6 @@
 <?php
 require_once('src/models/home_m.php');
-$newPage = createPage();
+createPage();
 $pages = getPages();
 $notifications = getNotifications();
 $tasks = null;
