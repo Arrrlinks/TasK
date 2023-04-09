@@ -9,7 +9,7 @@
     <h1>Register</h1>
     <form method="post">
         <div class="wave-group">
-            <input name="email" type="text" class="input" required>
+            <input name="email" id="email" type="text" class="input" required>
             <span class="bar"></span>
             <label class="label">
                 <span class="label-char" style="--index: 0">E</span>
@@ -20,7 +20,7 @@
             </label>
         </div>
         <div class="wave-group" id="input">
-            <input name="Fname" type="text" class="input" required>
+            <input name="Fname" id="Fname" type="text" class="input" required>
             <span class="bar"></span>
             <label class="label">
                 <span class="label-char" style="--index: 0">F</span>
@@ -35,7 +35,7 @@
             </label>
         </div>
         <div class="wave-group" id="input">
-            <input name="Lname" type="text" class="input" required>
+            <input name="Lname" id="Lname" type="text" class="input" required>
             <span class="bar"></span>
             <label class="label">
                 <span class="label-char" style="--index: 0">L</span>
@@ -87,5 +87,6 @@
         <a class="register" href="?login">Login</a>
     </form>
 </div>
+<script src="../scripts/login_register.js"></script>
 <?php $content = ob_get_clean(); ?>
 <?php require('views/template.php'); ?>

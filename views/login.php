@@ -9,7 +9,7 @@
     <h1>Login</h1>
     <form method="post">
         <div class="wave-group">
-            <input name="email" type="text" class="input" required>
+            <input name="email" id="email" type="text" class="input" required>
             <span class="bar"></span>
             <label class="label">
                 <span class="label-char" style="--index: 0">E</span>
@@ -43,5 +43,6 @@
         <a class="register" href="?register">Register</a>
     </form>
 </div>
+<script src="../scripts/login_register.js"></script>
 <?php $content = ob_get_clean(); ?>
 <?php require('views/template.php'); ?>

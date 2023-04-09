@@ -7,9 +7,17 @@ function createUser(){
         $Lname = $_POST['Lname'];
         $password = $_POST['password'];
         $confirm = $_POST['confirm'];
-        if($password == $confirm){
+        $db = dbConnect();
+        $req = $db->prepare('SELECT email FROM users WHERE email = :email');
+        $req->execute(array(
+            'email' => $email
+        ));
+        $result = $req->fetch();
+        if($result){
+            return '<p class="error">Email already exists</p>';
+        }
+        else if($password == $confirm){
             $password = password_hash($password, PASSWORD_DEFAULT);
-            $db = dbConnect();
             $req = $db->prepare('INSERT INTO users (email, firstName, lastName, password) VALUES (:email, :Fname, :Lname, :password)');
             $req->execute(array(
                 'email' => $email,
@@ -31,7 +39,7 @@ function createUser(){
             header('Location: ?');
         }
         else{
-            return '<p class="error">passwords do not match</p>';
+            return '<p class="error">Passwords do not match</p>';
         }
     }
 }
