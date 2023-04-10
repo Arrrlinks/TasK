@@ -15,12 +15,13 @@
         <?php } else { ?>
         <?php foreach ($notifications as $notification) { ?>
             <div class="user">
+                <?php $infoNotifications = getSender($notification['idUser']) ?>
                 <p>You were invited
-                    by <?= strtoupper(getSender($notification['idUser'])[0]['lastName']) . ' ' . ucfirst(getSender($notification['idUser'])[0]['firstName']) ?>
+                    by <?= strtoupper($infoNotifications[0]['lastName']) . ' ' . ucfirst($infoNotifications[0]['firstName']) ?>
                     to collaborate on the project <?= getPage($notification['idUser'])[0]['title'] ?> </p>
                 <div>
-                    <button type="button" onclick="acceptInvitation('<?= $notification['id'] ?>')">Accept</button>
-                    <button type="button" onclick="declineInvitation('<?= $notification['id'] ?>')">Decline</button>
+                    <button type="button" id="accept<?= $notification['id'] ?>" onclick="acceptInvitation('<?= $notification['id'] ?>')">Accept</button>
+                    <button type="button" id="decline<?= $notification['id'] ?>" onclick="declineInvitation('<?= $notification['id'] ?>')">Decline</button>
                 </div>
             </div>
         <?php }} ?>

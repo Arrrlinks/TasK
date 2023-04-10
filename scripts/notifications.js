@@ -3,7 +3,9 @@ function acceptInvitation(idNotification){
     xhr.open('POST', '../scripts/notifications.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
-        window.location.href = '?notifications';
+        const acceptButton = document.getElementById('accept'+idNotification);
+        acceptButton.parentNode.parentNode.parentNode.removeChild(acceptButton.parentNode.parentNode);
+
     }
     xhr.send('idNotification='+idNotification);
 }
@@ -13,7 +15,8 @@ function declineInvitation(idNotification){
     xhr.open('POST', '../scripts/notifications.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
-        window.location.href = '?notifications';
+        const acceptButton = document.getElementById('accept'+idNotification);
+        acceptButton.parentNode.parentNode.parentNode.removeChild(acceptButton.parentNode.parentNode);
     }
     xhr.send('idNotification='+idNotification+'&decline=true');
 }
