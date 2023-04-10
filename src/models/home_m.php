@@ -61,8 +61,14 @@ function createTasks($pageID)
 function getTasks($pageID)
 {
     $db = dbConnect();
-    $getTasks = $db->prepare('SELECT * FROM tasks WHERE idPage = ?');
-    $getTasks->execute(array($pageID));
+    if(isset($_GET['q'])){
+        $getTasks = $db->prepare('SELECT * FROM tasks WHERE idPage = ? AND title LIKE ? OR description LIKE ?');
+        $getTasks->execute(array($pageID, '%'.$_GET['q'].'%', '%'.$_GET['q'].'%'));
+    }
+    else {
+        $getTasks = $db->prepare('SELECT * FROM tasks WHERE idPage = ?');
+        $getTasks->execute(array($pageID));
+    }
     return $getTasks->fetchAll();
 }
 
@@ -88,7 +94,6 @@ function getNotifications() {
         }
     }
 }
-
 
 function isOwner($pageID) {
     $db = dbConnect();

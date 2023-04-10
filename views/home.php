@@ -67,7 +67,11 @@
             <div class="searchBar">
                 <form method="get">
                     <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
+                    <?php if(isset($_GET['q'])) { ?>
+                    <input type="text" placeholder="Search" name="q" id="searchBar" value="<?= $_GET['q'] ?>">
+                    <?php } else { ?>
                     <input type="text" placeholder="Search" name="q" id="searchBar">
+                    <?php } ?>
                 </form>
             </div>
             <div class="createTask">
