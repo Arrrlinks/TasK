@@ -1,7 +1,7 @@
 <?php
 function dbConnect() {
     $db_pwd = file_get_contents('db-pwd.txt');
-    return new PDO('mysql:host=92.222.10.61;dbname=TasK;charset=utf8', 'root', $db_pwd);
+    return new PDO('mysql:host=185.216.26.238;dbname=TasK;charset=utf8', 'root', $db_pwd);
 }
 
 function ifSessionExit(){
